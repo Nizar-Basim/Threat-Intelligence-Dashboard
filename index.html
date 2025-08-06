@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Threat Intelligence Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+  <div class="dashboard" id="dashboard">
+    <header>
+      <div class="logo-title">
+        <h1>Nziar SOCview</h1>
+        <span class="status-indicator"></span>
+      </div>
+      <div class="header-controls">
+        <button class="theme-toggle" id="themeToggle">
+          <span id="themeIcon">Dark</span>
+          <span id="themeText">Mode</span>
+        </button>
+        <div class="clock" id="clock">--:--:--</div>
+      </div>
+    </header>
+    <div class="alert-banner">
+      <div class="alert-text" id="alertTicker">ALERT: Loading latest cybersecurity news...</div>
+    </div>
+    <div class="main-content">
+      <div class="panel">
+        <h2>Threat Intelligence Feeds</h2>
+        <button class="export-btn" id="exportCSV">Export Feed to CSV</button>
+        <div class="scrollable-content" id="threatFeeds">
+          <div class="loading">Loading threat feeds</div>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>Live Threat Map</h2>
+        <div id="map"></div>
+        <div class="cve-container">
+          <h2 style="font-size: 1.4rem; margin: 0 0 16px 0;">Latest CVEs</h2>
+          <div class="scrollable-content" id="cveList">
+            <div class="loading">Loading CVE data</div>
+          </div>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>Cybersecurity News</h2>
+        <div class="scrollable-content" id="cyberNewsTab">
+          <div class="loading">Loading news</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>
